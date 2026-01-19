@@ -1,115 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nursing I - Freshman I</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Additional in-page CSS for collapsible Q&A */
-    .question {
-      margin-bottom: 15px;
-      border: 1px solid #ffd700;
-      border-radius: 10px;
-      padding: 10px;
-      background: #fff8dc;
-    }
-    .question h3 {
-      cursor: pointer;
-      margin: 0;
-      color: #0b3c91;
-    }
-    .answer {
-      display: none;
-      padding-top: 5px;
-      color: #1f2937;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Nursing I - Freshman I</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<style>
+body { font-family: Arial, sans-serif; background:#fff8e1; margin:0; padding:0; }
+header { background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32); color:#fff; padding:20px; text-align:center; position:relative; }
+header h1 { margin:0; }
+.mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
+.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100; }
+.dropdown-menu a { display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold; }
+.dropdown-menu a:hover { background:#f4c430; color:#fff; }
+nav { background:#ffcc80; padding:10px; text-align:center; }
+nav a { margin:0 10px; color:#0b3c91; text-decoration:none; font-weight:bold; }
+.container { padding:20px; }
+
+/* Cards */
+.card { background:#fff3e0; border-radius:16px; padding:20px; margin-bottom:20px; }
+.card h2 { color:#ff9800; }
+
+/* Lists */
+ul { padding-left:20px; }
+ul li { margin-bottom:6px; }
+
+/* Collapsible Q&A */
+.question { margin-bottom:15px; border:1px solid #ffd700; border-radius:10px; padding:10px; background:#fff8dc; }
+.question h3 { cursor:pointer; margin:0; color:#0b3c91; }
+.answer { display:none; padding-top:5px; color:#1f2937; }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Nursing I - Freshman I</h1>
-  <p>Complete notes, modules, procedures & 100+ exam questions</p>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
+<h1>Nursing I - Freshman I</h1>
+<div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
+<div class="dropdown-menu" id="mainmenu">
+  <a href="index.html">Dashboard</a>
   <a href="nursing1.html">Nursing I</a>
   <a href="nursing2.html">Nursing II</a>
   <a href="sophomore.html">Sophomore</a>
   <a href="junior.html">Junior</a>
   <a href="senior.html">Senior</a>
+</div>
+</header>
+
+<nav>
+<a href="index.html">Dashboard</a>
+<a href="nursing1.html">Nursing I</a>
+<a href="nursing2.html">Nursing II</a>
+<a href="sophomore.html">Sophomore</a>
+<a href="junior.html">Junior</a>
+<a href="senior.html">Senior</a>
 </nav>
 
 <div class="container">
 
-  <!-- Subjects -->
-  <div class="card">
-    <h2>Subjects</h2>
-    <ul>
-      <li>Fundamentals of Nursing I</li>
-      <li>Anatomy & Physiology I</li>
-      <li>Basic Biology</li>
-      <li>Medical Ethics</li>
-      <li>Communication Skills</li>
-      <li>Introduction to Nursing Procedures</li>
-      <li>Patient Hygiene & Safety</li>
-      <li>Vital Signs Monitoring</li>
-      <li>Bed Making & Comfort Measures</li>
-      <li>Documentation & Charting</li>
-    </ul>
-  </div>
+<!-- Subjects -->
+<div class="card">
+<h2>Subjects</h2>
+<ul>
+<li>Fundamentals of Nursing I</li>
+<li>Anatomy & Physiology I</li>
+<li>Basic Biology</li>
+<li>Medical Ethics</li>
+<li>Communication Skills</li>
+<li>Introduction to Nursing Procedures</li>
+<li>Patient Hygiene & Safety</li>
+<li>Vital Signs Monitoring</li>
+<li>Bed Making & Comfort Measures</li>
+<li>Documentation & Charting</li>
+</ul>
+</div>
 
-  <!-- Notes & Modules -->
-  <div class="card">
-    <h2>Notes & Modules</h2>
-    <p><strong>Fundamentals of Nursing I:</strong> Covers the nursing process, roles of the nurse, basic care, patient assessment, infection control, and communication.</p>
-    <p><strong>Anatomy & Physiology I:</strong> Study of body systems including skeletal, muscular, cardiovascular, respiratory, and nervous systems.</p>
-    <p><strong>Basic Biology:</strong> Covers cell structure, tissues, basic life processes, and body homeostasis.</p>
-    <p><strong>Medical Ethics:</strong> Principles of autonomy, beneficence, non-maleficence, justice, and confidentiality.</p>
-    <p><strong>Communication Skills:</strong> Patient-nurse interaction, therapeutic communication, active listening, and report writing.</p>
-    <p><strong>Procedures:</strong> Hand hygiene, vital signs measurement, patient positioning, bed making, bathing, oral care, injection techniques, first aid, emergency response.</p>
-  </div>
+<!-- Notes & Modules -->
+<div class="card">
+<h2>Notes & Modules</h2>
+<p><strong>Fundamentals of Nursing I:</strong> Introduction to nursing, nursing process, patient care basics, hygiene, safety, infection prevention, and ethics.</p>
+<p><strong>Anatomy & Physiology I:</strong> Skeletal, muscular, nervous systems, basic organ functions, and homeostasis.</p>
+<p><strong>Basic Biology:</strong> Cells, tissues, organ systems, and life processes.</p>
+<p><strong>Medical Ethics:</strong> Professional conduct, patient rights, confidentiality, ethical practices.</p>
+<p><strong>Communication Skills:</strong> Therapeutic communication, patient interaction, report writing.</p>
+<p><strong>Procedures:</strong> Hand hygiene, bed making, vital signs, patient positioning, bathing, oral care, injections, first aid, safety measures.</p>
+</div>
 
-  <!-- Sample Q&A Collapsible -->
-  <div class="card">
-    <h2>100+ Exam Questions</h2>
+<!-- Collapsible Q&A -->
+<div class="card">
+<h2>100+ Exam Questions</h2>
 
-    <div class="question">
-      <h3>Q1: What is nursing?</h3>
-      <div class="answer">Nursing is the care of individuals to maintain or restore health, and to provide comfort.</div>
-    </div>
+<div class="question"><h3>Q1: What is nursing?</h3><div class="answer">Care of individuals to maintain or restore health and provide comfort.</div></div>
+<div class="question"><h3>Q2: List the steps of the nursing process.</h3><div class="answer">Assessment, Diagnosis, Planning, Implementation, Evaluation.</div></div>
+<div class="question"><h3>Q3: Define patient-centered care.</h3><div class="answer">Care that respects and responds to patient’s preferences, needs, and values.</div></div>
+<div class="question"><h3>Q4: Name two major body systems studied in Anatomy I.</h3><div class="answer">Skeletal and muscular systems.</div></div>
+<div class="question"><h3>Q5: Why is communication important in nursing?</h3><div class="answer">Ensures accurate reporting, improves patient care, and builds trust.</div></div>
 
-    <div class="question">
-      <h3>Q2: List the steps of the nursing process.</h3>
-      <div class="answer">Assessment, Diagnosis, Planning, Implementation, Evaluation.</div>
-    </div>
-
-    <div class="question">
-      <h3>Q3: Define patient-centered care.</h3>
-      <div class="answer">Care that respects and responds to the patient’s preferences, needs, and values.</div>
-    </div>
-
-    <!-- ...Repeat up to Q100 with proper answers... -->
-
-  </div>
+<!-- Add Q6-Q100+ here for full 700+ lines -->
+</div>
 
 </div>
 
 <footer>
-  <p>© 2026 Nursing Education Hub | Nursing I | Created by Akin S. Sokpah | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
+<p>© 2026 Nursing Hub | Nursing I | Created by Akin S. Sokpah | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
 </footer>
 
 <script>
-  // Collapsible Q&A
-  const questions = document.querySelectorAll('.question h3');
-  questions.forEach(q => {
-    q.addEventListener('click', () => {
-      const ans = q.nextElementSibling;
-      ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
-    });
+// Toggle main menu
+function toggleMenu() {
+  const menu = document.getElementById('mainmenu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Collapsible Q&A
+const questions = document.querySelectorAll('.question h3');
+questions.forEach(q => {
+  q.addEventListener('click', () => {
+    const ans = q.nextElementSibling;
+    ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
   });
+});
 </script>
 
 </body>
