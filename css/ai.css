@@ -1,0 +1,52 @@
+.ai-assistant {
+  background: linear-gradient(135deg, #fff176, #f06292, #f44336);
+  border-radius: 16px;
+  padding: 20px;
+  color: #000;
+  margin-top: 20px;
+}
+
+.ai-assistant h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#chat-box {
+  background: #fff;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#chat-box .message {
+  margin-bottom: 8px;
+}
+
+#chat-box .user {
+  text-align: right;
+  color: #d500f9;
+}
+
+#chat-box .bot {
+  text-align: left;
+  color: #000;
+}
+
+#user-input {
+  width: calc(100% - 100px);
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 5px;
+}
+
+#send-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+}
