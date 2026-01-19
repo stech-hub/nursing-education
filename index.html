@@ -2,155 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nursing Hub - Dashboard</title>
+<title>Nursing Hub Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/ai.css">
 <style>
-/* GENERAL STYLING */
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff8e1; }
-header { background: linear-gradient(135deg, #f4c430, #0b3c91, #2e7d32); color:#fff; padding:20px; text-align:center; }
+body { font-family: Arial, sans-serif; background:#fff8e1; margin:0; padding:0; }
+header { background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32); color:#fff; padding:20px; text-align:center; position:relative; }
 header h1 { margin:0; }
-.container { padding:20px; }
-
-/* TOP-RIGHT MAIN MENU ICON */
-.mainmenu-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  color: #fff;
-}
-.dropdown-menu {
-  display:none;
-  position:absolute;
-  right:20px;
-  top:60px;
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.3);
-  overflow:hidden;
-  z-index:100;
-}
-.dropdown-menu a {
-  display:block;
-  padding:12px 20px;
-  text-decoration:none;
-  color:#0b3c91;
-  font-weight:bold;
-  transition:0.2s;
-}
+.mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
+.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100; }
+.dropdown-menu a { display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold; }
 .dropdown-menu a:hover { background:#f4c430; color:#fff; }
+nav { background:#ffcc80; padding:10px; text-align:center; }
+nav a { margin:0 10px; color:#0b3c91; text-decoration:none; font-weight:bold; }
 
-/* DASHBOARD CARDS */
-.dashboard-container {
-  display: flex; flex-wrap: wrap; gap:20px; margin-top:20px;
-}
-.course-card {
-  flex:1 1 220px;
-  background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32);
-  color:#fff;
-  padding:25px;
-  border-radius:16px;
-  text-align:center;
-  font-weight:bold;
-  cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.course-card:hover { transform:translateY(-8px); box-shadow:0 12px 30px rgba(0,0,0,0.3); }
-.course-card a { color:#fff; text-decoration:none; display:block; }
+.container { padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 
-/* FEATURES SECTION */
-.features {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  margin-top:20px;
-}
-.feature-card {
-  background:linear-gradient(135deg,#ffd84d,#ff8c00,#f4c430);
-  padding:20px;
-  border-radius:14px;
-  text-align:center;
-  font-weight:600;
-  transition: transform 0.3s;
-}
-.feature-card:hover { transform:translateY(-5px); }
+/* Cards */
+.card { background:#fff3e0; border-radius:16px; padding:20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:0.3s; cursor:pointer; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+.card h2 { color:#ff9800; margin-bottom:10px; }
+.card p { color:#0b3c91; font-weight:bold; }
 
-/* AI ASSISTANT */
-#nsbot-container {
-  margin-top:30px;
-  border-radius:16px;
-  padding:20px;
-  background: linear-gradient(135deg,#fff176,#f06292,#f44336);
-  color:#000;
-}
-#chat-box { background:#fff; height:300px; overflow-y:scroll; border-radius:12px; padding:10px; margin-bottom:10px; }
-#chat-box .message { margin-bottom:8px; }
-#chat-box .user { text-align:right; color:#d500f9; }
-#chat-box .bot { text-align:left; color:#000; }
-#user-input { width:calc(100% - 100px); padding:10px; border-radius:12px; border:none; margin-right:5px; }
-#send-btn { padding:10px 15px; border:none; border-radius:12px; background-color:#f44336; color:#fff; cursor:pointer; }
+footer { text-align:center; padding:15px; background:#ffcc80; margin-top:20px; font-weight:bold; }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Nursing Education Hub</h1>
+<h1>Nursing Hub Dashboard</h1>
 <div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
 <div class="dropdown-menu" id="mainmenu">
   <a href="index.html">Dashboard</a>
-  <a href="nursing1.html">Nursing I - Freshman I</a>
-  <a href="nursing2.html">Nursing II - Freshman II</a>
+  <a href="nursing1.html">Freshman I</a>
+  <a href="nursing2.html">Freshman II</a>
   <a href="sophomore.html">Sophomore</a>
   <a href="junior.html">Junior</a>
   <a href="senior.html">Senior</a>
-  <a href="#">Anatomy & Physiology</a>
-  <a href="#">Pharmacology</a>
-  <a href="#">Medical-Surgical Nursing</a>
-  <a href="#">Maternal & Child Health</a>
-  <a href="#">Psychiatric Nursing</a>
 </div>
 </header>
 
+<nav>
+<a href="index.html">Dashboard</a>
+<a href="nursing1.html">Freshman I</a>
+<a href="nursing2.html">Freshman II</a>
+<a href="sophomore.html">Sophomore</a>
+<a href="junior.html">Junior</a>
+<a href="senior.html">Senior</a>
+</nav>
+
 <div class="container">
-<h2>Courses & Levels</h2>
-<div class="dashboard-container">
-  <div class="course-card"><a href="nursing1.html">Nursing I - Freshman I</a></div>
-  <div class="course-card"><a href="nursing2.html">Nursing II - Freshman II</a></div>
-  <div class="course-card"><a href="sophomore.html">Sophomore</a></div>
-  <div class="course-card"><a href="junior.html">Junior</a></div>
-  <div class="course-card"><a href="senior.html">Senior</a></div>
-  <div class="course-card"><a href="#">Anatomy & Physiology</a></div>
-  <div class="course-card"><a href="#">Pharmacology</a></div>
-  <div class="course-card"><a href="#">Medical-Surgical Nursing</a></div>
-  <div class="course-card"><a href="#">Maternal & Child Health</a></div>
-  <div class="course-card"><a href="#">Psychiatric Nursing</a></div>
-</div>
-
-<h2>Recommended Features</h2>
-<div class="features">
-  <div class="feature-card">Interactive Q&A per level</div>
-  <div class="feature-card">Detailed course notes & modules</div>
-  <div class="feature-card">Step-by-step nursing procedures</div>
-  <div class="feature-card">Ns Bot AI Assistant</div>
-  <div class="feature-card">Voice-enabled AI responses</div>
-  <div class="feature-card">Search & filter questions</div>
-  <div class="feature-card">Downloadable resources</div>
-  <div class="feature-card">Mobile & desktop responsive</div>
-  <div class="feature-card">Student progress tracking</div>
-  <div class="feature-card">External nursing references</div>
-</div>
-
-<!-- Ns Bot AI -->
-<div id="nsbot-container">
-<h2>Ns Bot - Your AI Nursing Assistant</h2>
-<div id="chat-box"></div>
-<input type="text" id="user-input" placeholder="Ask me anything..." />
-<button id="send-btn">Send</button>
-</div>
-
+  <div class="card" onclick="location.href='nursing1.html'">
+    <h2>Freshman I</h2>
+    <p>All Modules, Notes, Q&A</p>
+  </div>
+  <div class="card" onclick="location.href='nursing2.html'">
+    <h2>Freshman II</h2>
+    <p>All Modules, Notes, Q&A</p>
+  </div>
+  <div class="card" onclick="location.href='sophomore.html'">
+    <h2>Sophomore</h2>
+    <p>Advanced Nursing Topics</p>
+  </div>
+  <div class="card" onclick="location.href='junior.html'">
+    <h2>Junior</h2>
+    <p>Clinical Skills & Leadership</p>
+  </div>
+  <div class="card" onclick="location.href='senior.html'">
+    <h2>Senior</h2>
+    <p>Advanced & Capstone Projects</p>
+  </div>
 </div>
 
 <footer>
@@ -159,47 +80,65 @@ header h1 { margin:0; }
 
 <script>
 // Toggle main menu
-function toggleMenu(){
+function toggleMenu() {
   const menu = document.getElementById('mainmenu');
   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
+</script>
 
-// Ns Bot AI
-const chatBox = document.getElementById("chat-box");
-const userInput = document.getElementById("user-input");
-const sendBtn = document.getElementById("send-btn");
+<!-- Ns Bot AI -->
+<div id="nsbot-container" style="position:fixed;bottom:30px;right:30px;z-index:999;">
+  <button id="nsbot-btn" style="background:#ff4081;color:#fff;border:none;padding:15px 20px;border-radius:50px;cursor:pointer;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+    Ns Bot 💬
+  </button>
+  <div id="nsbot-chat" style="display:none;width:350px;max-height:500px;background:#fff0f5;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,0.3);overflow:hidden;margin-top:10px;">
+    <div style="background:#ff4081;color:#fff;padding:10px;text-align:center;font-weight:bold;">Ns Bot AI</div>
+    <div id="nsbot-messages" style="padding:10px;height:300px;overflow-y:auto;"></div>
+    <div style="display:flex;border-top:1px solid #ff4081;">
+      <input id="nsbot-input" type="text" placeholder="Ask me anything..." style="flex:1;padding:10px;border:none;border-radius:0;outline:none;">
+      <button id="nsbot-send" style="background:#ff4081;color:#fff;border:none;padding:0 15px;cursor:pointer;">Send</button>
+    </div>
+  </div>
+</div>
 
-async function sendMessage() {
-  const text = userInput.value.trim();
-  if(!text) return;
-  appendMessage(text,'user'); userInput.value='';
+<script>
+// Ns Bot Toggle
+const nsBtn = document.getElementById('nsbot-btn');
+const nsChat = document.getElementById('nsbot-chat');
+nsBtn.addEventListener('click', () => {
+  nsChat.style.display = nsChat.style.display === 'block' ? 'none' : 'block';
+});
 
-  if(text.toLowerCase().includes("who created you")){
-    appendMessage("I was created by Akin S. Sokpah and powered by OpenAI.", "bot");
-    return;
-  }
+const nsSend = document.getElementById('nsbot-send');
+const nsInput = document.getElementById('nsbot-input');
+const nsMessages = document.getElementById('nsbot-messages');
+
+nsSend.addEventListener('click', async () => {
+  const question = nsInput.value.trim();
+  if(!question) return;
+  appendMessage("You", question);
+  nsInput.value = '';
 
   try {
-    const response = await fetch("/api/openai",{ 
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({prompt:text})
+    const response = await fetch('/api/nsbot', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({question})
     });
     const data = await response.json();
-    appendMessage(data.response || "Sorry, I cannot answer that.","bot");
-  } catch(err){ appendMessage("Error: Cannot connect to OpenAI API.","bot"); }
-}
+    appendMessage("Ns Bot", data.answer);
+  } catch (err) {
+    appendMessage("Ns Bot", "Sorry, I cannot answer right now.");
+  }
+});
 
-function appendMessage(msg,sender){
-  const div=document.createElement("div");
-  div.classList.add("message",sender);
-  div.textContent=msg;
-  chatBox.appendChild(div);
-  chatBox.scrollTop=chatBox.scrollHeight;
+function appendMessage(sender, text){
+  const msg = document.createElement('div');
+  msg.style.marginBottom = '10px';
+  msg.innerHTML = `<b>${sender}:</b> ${text}`;
+  nsMessages.appendChild(msg);
+  nsMessages.scrollTop = nsMessages.scrollHeight;
 }
-
-sendBtn.addEventListener("click",sendMessage);
-userInput.addEventListener("keypress",e=>{ if(e.key==="Enter") sendMessage(); });
 </script>
 
 </body>
