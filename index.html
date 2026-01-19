@@ -1,83 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nursing Education Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/ai.css">
+<meta charset="UTF-8">
+<title>Nursing Education Hub - Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ai.css">
+<style>
+/* Dashboard specific styling */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Course / Level Cards */
+.course-card {
+  flex: 1 1 220px;
+  background: linear-gradient(135deg, #f4c430, #0b3c91, #2e7d32);
+  color: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+.course-card a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.feature-card {
+  background: linear-gradient(135deg, #ffd84d, #ff8c00, #f4c430);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* AI Assistant */
+#nsbot-container {
+  margin-top: 30px;
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff176, #f06292, #f44336);
+  color: #000;
+}
+#chat-box {
+  background: #fff;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#chat-box .message { margin-bottom: 8px; }
+#chat-box .user { text-align: right; color: #d500f9; }
+#chat-box .bot { text-align: left; color: #000; }
+#user-input { width: calc(100% - 100px); padding: 10px; border-radius: 12px; border: none; margin-right:5px; }
+#send-btn { padding:10px 15px; border:none; border-radius:12px; background-color:#f44336; color:#fff; cursor:pointer; }
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-  <h1>Nursing Education Hub</h1>
-  <p>From Freshman I to Senior | Complete Notes, Modules, Procedures & Q&A</p>
+<h1>Nursing Education Hub - Dashboard</h1>
+<p>Welcome! Access all courses, subjects, and your AI assistant.</p>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
-  <a href="index.html">Home</a>
-  <a href="nursing1.html">Nursing I</a>
-  <a href="nursing2.html">Nursing II</a>
-  <a href="sophomore.html">Sophomore</a>
-  <a href="junior.html">Junior</a>
-  <a href="senior.html">Senior</a>
+<a href="index.html">Dashboard</a>
+<a href="nursing1.html">Nursing I</a>
+<a href="nursing2.html">Nursing II</a>
+<a href="sophomore.html">Sophomore</a>
+<a href="junior.html">Junior</a>
+<a href="senior.html">Senior</a>
 </nav>
 
 <div class="container">
 
-  <!-- MAIN MENU -->
-  <div class="card">
-    <h2>Main Menu - All Courses & Subjects</h2>
-    <div class="levels">
-      <div class="level-box"><a href="nursing1.html">Nursing I - Freshman I</a></div>
-      <div class="level-box"><a href="nursing2.html">Nursing II - Freshman II</a></div>
-      <div class="level-box"><a href="sophomore.html">Sophomore</a></div>
-      <div class="level-box"><a href="junior.html">Junior</a></div>
-      <div class="level-box"><a href="senior.html">Senior</a></div>
-      <div class="level-box"><a href="#">Anatomy & Physiology</a></div>
-      <div class="level-box"><a href="#">Pharmacology</a></div>
-      <div class="level-box"><a href="#">Medical-Surgical Nursing</a></div>
-      <div class="level-box"><a href="#">Maternal & Child Health</a></div>
-      <div class="level-box"><a href="#">Psychiatric Nursing</a></div>
-    </div>
-  </div>
+<!-- Courses / Levels -->
+<h2>Courses & Levels</h2>
+<div class="dashboard-container">
+  <div class="course-card"><a href="nursing1.html">Nursing I - Freshman I</a></div>
+  <div class="course-card"><a href="nursing2.html">Nursing II - Freshman II</a></div>
+  <div class="course-card"><a href="sophomore.html">Sophomore</a></div>
+  <div class="course-card"><a href="junior.html">Junior</a></div>
+  <div class="course-card"><a href="senior.html">Senior</a></div>
+  <div class="course-card"><a href="#">Anatomy & Physiology</a></div>
+  <div class="course-card"><a href="#">Pharmacology</a></div>
+  <div class="course-card"><a href="#">Medical-Surgical Nursing</a></div>
+  <div class="course-card"><a href="#">Maternal & Child Health</a></div>
+  <div class="course-card"><a href="#">Psychiatric Nursing</a></div>
+</div>
 
-  <!-- 10 Recommended Features -->
-  <div class="card">
-    <h2>Official Recommended Features</h2>
-    <ul>
-      <li>Interactive Q&A for each level</li>
-      <li>Detailed course notes & modules</li>
-      <li>Step-by-step nursing procedures</li>
-      <li>AI Assistant (Ns Bot) for guidance</li>
-      <li>Voice-enabled responses</li>
-      <li>Search & filter questions by subject</li>
-      <li>Downloadable content for offline study</li>
-      <li>Responsive mobile & desktop design</li>
-      <li>Progress tracking per student</li>
-      <li>Integrated links to external nursing resources</li>
-    </ul>
-  </div>
+<!-- 10 Recommended Features -->
+<h2>Recommended Features</h2>
+<div class="features">
+  <div class="feature-card">Interactive Q&A per level</div>
+  <div class="feature-card">Detailed course notes & modules</div>
+  <div class="feature-card">Step-by-step nursing procedures</div>
+  <div class="feature-card">Ns Bot AI Assistant</div>
+  <div class="feature-card">Voice-enabled AI responses</div>
+  <div class="feature-card">Search & filter questions</div>
+  <div class="feature-card">Downloadable resources</div>
+  <div class="feature-card">Mobile & desktop responsive</div>
+  <div class="feature-card">Student progress tracking</div>
+  <div class="feature-card">External nursing references</div>
+</div>
 
-  <!-- AI ASSISTANT -->
-  <div class="card ai-assistant">
-    <h2>Ns Bot - Your AI Nursing Assistant</h2>
-    <div id="chat-box" class="chat-box"></div>
-    <input type="text" id="user-input" placeholder="Ask me anything..." />
-    <button id="send-btn">Send</button>
-  </div>
+<!-- Ns Bot AI Assistant -->
+<div id="nsbot-container">
+<h2>Ns Bot - Your AI Nursing Assistant</h2>
+<div id="chat-box"></div>
+<input type="text" id="user-input" placeholder="Ask me anything..." />
+<button id="send-btn">Send</button>
+</div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Nursing Education Hub | Created by <strong>Akin S. Sokpah</strong> | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
+<p>© 2026 Nursing Education Hub | Created by <strong>Akin S. Sokpah</strong> | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
 </footer>
 
-<!-- AI BOT SCRIPT -->
-<script src="js/ai.js"></script>
+<script>
+// Ns Bot AI using OpenAI API
+const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
+const sendBtn = document.getElementById("send-btn");
+
+async function sendMessage() {
+  const userText = userInput.value.trim();
+  if (!userText) return;
+
+  appendMessage(userText, "user");
+  userInput.value = "";
+
+  // Special response
+  if (userText.toLowerCase().includes("who created you")) {
+    appendMessage("I was created by Akin S. Sokpah and powered by OpenAI.", "bot");
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/openai", { // This endpoint should be implemented in Vercel serverless function
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: userText })
+    });
+    const data = await response.json();
+    appendMessage(data.response || "Sorry, I cannot answer that.", "bot");
+  } catch (err) {
+    appendMessage("Error: Cannot connect to OpenAI API.", "bot");
+  }
+}
+
+function appendMessage(msg, sender) {
+  const div = document.createElement("div");
+  div.classList.add("message", sender);
+  div.textContent = msg;
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", (e) => { if(e.key==="Enter") sendMessage(); });
+</script>
 
 </body>
 </html>
