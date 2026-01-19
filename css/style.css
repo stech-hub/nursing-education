@@ -1,0 +1,161 @@
+:root {
+  --blue: #0b3c91;
+  --gold: #f4c430;
+  --green: #2e7d32;
+  --yellow: #ffd84d;
+  --orange: #ff8c00;
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    var(--green),
+    var(--gold)
+  );
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* NAVIGATION */
+nav {
+  background: white;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--yellow);
+  color: #000;
+}
+
+/* MAIN CONTENT */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--blue);
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+/* LEVEL BUTTONS */
+.levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.level-box {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--orange),
+    var(--yellow)
+  );
+  padding: 20px;
+  border-radius: 16px;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.level-box:hover {
+  transform: translateY(-6px);
+}
+
+.level-box a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+/* QUESTIONS */
+.question {
+  margin-bottom: 15px;
+}
+
+.question strong {
+  color: var(--green);
+}
+
+/* FOOTER */
+footer {
+  background: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
