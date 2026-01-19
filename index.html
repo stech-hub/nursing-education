@@ -5,76 +5,79 @@
   <title>Nursing Education Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ai.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <h1>Nursing Education Hub</h1>
-  <p>From Nursing I to Senior | Complete Notes, Modules, Procedures & Exam Q&A</p>
+  <p>From Freshman I to Senior | Complete Notes, Modules, Procedures & Q&A</p>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
   <a href="nursing1.html">Nursing I</a>
   <a href="nursing2.html">Nursing II</a>
+  <a href="sophomore.html">Sophomore</a>
   <a href="junior.html">Junior</a>
   <a href="senior.html">Senior</a>
 </nav>
 
 <div class="container">
 
+  <!-- MAIN MENU -->
   <div class="card">
-    <h2>Welcome 👋</h2>
-    <p>
-      This platform provides <strong>complete nursing education materials</strong>
-      from Freshman I up to Senior level, including:
-    </p>
-    <ul>
-      <li>All subjects & topics</li>
-      <li>Detailed nursing notes</li>
-      <li>Modules for each course</li>
-      <li>Procedures and practical skills</li>
-      <li>100+ exam questions & answers per level (expandable to 200 per module)</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Select Your Level</h2>
-
+    <h2>Main Menu - All Courses & Subjects</h2>
     <div class="levels">
-      <div class="level-box">
-        <a href="nursing1.html">Nursing I<br>Freshman I</a>
-      </div>
-
-      <div class="level-box">
-        <a href="nursing2.html">Nursing II<br>Freshman II</a>
-      </div>
-
-      <div class="level-box">
-        <a href="junior.html">Junior Level</a>
-      </div>
-
-      <div class="level-box">
-        <a href="senior.html">Senior Level</a>
-      </div>
+      <div class="level-box"><a href="nursing1.html">Nursing I - Freshman I</a></div>
+      <div class="level-box"><a href="nursing2.html">Nursing II - Freshman II</a></div>
+      <div class="level-box"><a href="sophomore.html">Sophomore</a></div>
+      <div class="level-box"><a href="junior.html">Junior</a></div>
+      <div class="level-box"><a href="senior.html">Senior</a></div>
+      <div class="level-box"><a href="#">Anatomy & Physiology</a></div>
+      <div class="level-box"><a href="#">Pharmacology</a></div>
+      <div class="level-box"><a href="#">Medical-Surgical Nursing</a></div>
+      <div class="level-box"><a href="#">Maternal & Child Health</a></div>
+      <div class="level-box"><a href="#">Psychiatric Nursing</a></div>
     </div>
   </div>
 
+  <!-- 10 Recommended Features -->
   <div class="card">
-    <h2>About the Creator</h2>
-    <p>Created by <strong>Akin S. Sokpah</strong> from Liberia.</p>
+    <h2>Official Recommended Features</h2>
     <ul>
-      <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Akin S. Sokpah</a></li>
-      <li>WhatsApp: <a href="https://wa.me/231777789356" target="_blank">Message me on WhatsApp</a></li>
+      <li>Interactive Q&A for each level</li>
+      <li>Detailed course notes & modules</li>
+      <li>Step-by-step nursing procedures</li>
+      <li>AI Assistant (Ns Bot) for guidance</li>
+      <li>Voice-enabled responses</li>
+      <li>Search & filter questions by subject</li>
+      <li>Downloadable content for offline study</li>
+      <li>Responsive mobile & desktop design</li>
+      <li>Progress tracking per student</li>
+      <li>Integrated links to external nursing resources</li>
     </ul>
-    <p>For support, questions, or contributions, contact the creator directly.</p>
+  </div>
+
+  <!-- AI ASSISTANT -->
+  <div class="card ai-assistant">
+    <h2>Ns Bot - Your AI Nursing Assistant</h2>
+    <div id="chat-box" class="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Ask me anything..." />
+    <button id="send-btn">Send</button>
   </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Nursing Education Hub | Created by Akin S. Sokpah | Liberia</p>
+  <p>© 2026 Nursing Education Hub | Created by <strong>Akin S. Sokpah</strong> | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
 </footer>
+
+<!-- AI BOT SCRIPT -->
+<script src="js/ai.js"></script>
 
 </body>
 </html>
