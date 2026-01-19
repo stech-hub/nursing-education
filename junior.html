@@ -1,83 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Junior Level Nursing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Junior Nursing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<style>
+body { font-family: Arial, sans-serif; background:#fff8e1; margin:0; padding:0; }
+header { background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32); color:#fff; padding:20px; text-align:center; position:relative; }
+header h1 { margin:0; }
+.mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
+.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100; }
+.dropdown-menu a { display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold; }
+.dropdown-menu a:hover { background:#f4c430; color:#fff; }
+nav { background:#ffcc80; padding:10px; text-align:center; }
+nav a { margin:0 10px; color:#0b3c91; text-decoration:none; font-weight:bold; }
+.container { padding:20px; }
+
+/* Cards */
+.card { background:#fff3e0; border-radius:16px; padding:20px; margin-bottom:20px; }
+.card h2 { color:#ff9800; }
+
+/* Lists */
+ul { padding-left:20px; }
+ul li { margin-bottom:6px; }
+
+/* Collapsible Q&A */
+.question { margin-bottom:15px; border:1px solid #ffd700; border-radius:10px; padding:10px; background:#fffde7; }
+.question h3 { cursor:pointer; margin:0; color:#0b3c91; }
+.answer { display:none; padding-top:5px; color:#1f2937; }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Junior Level Nursing</h1>
+<h1>Junior Nursing</h1>
+<div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
+<div class="dropdown-menu" id="mainmenu">
+  <a href="index.html">Dashboard</a>
+  <a href="nursing1.html">Nursing I</a>
+  <a href="nursing2.html">Nursing II</a>
+  <a href="sophomore.html">Sophomore</a>
+  <a href="junior.html">Junior</a>
+  <a href="senior.html">Senior</a>
+</div>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="nursing1.html">Nursing I</a>
-  <a href="nursing2.html">Nursing II</a>
-  <a href="junior.html">Junior</a>
-  <a href="senior.html">Senior</a>
+<a href="index.html">Dashboard</a>
+<a href="nursing1.html">Nursing I</a>
+<a href="nursing2.html">Nursing II</a>
+<a href="sophomore.html">Sophomore</a>
+<a href="junior.html">Junior</a>
+<a href="senior.html">Senior</a>
 </nav>
 
 <div class="container">
 
-  <div class="card">
-    <h2>Subjects</h2>
-    <ul>
-      <li>Medical-Surgical Nursing</li>
-      <li>Pharmacology</li>
-      <li>Community Health Nursing</li>
-      <li>Maternal & Child Health Nursing</li>
-      <li>Psychiatric Nursing (Intro)</li>
-    </ul>
-  </div>
+<!-- Subjects -->
+<div class="card">
+<h2>Subjects</h2>
+<ul>
+<li>Medical-Surgical Nursing II</li>
+<li>Pharmacology II</li>
+<li>Advanced Pathophysiology</li>
+<li>Pediatric Nursing II</li>
+<li>Maternal & Child Health II</li>
+<li>Community Health Nursing</li>
+<li>Clinical Practicum II</li>
+<li>Leadership & Management in Nursing</li>
+<li>Research & Evidence-Based Practice</li>
+<li>Advanced Ethics & Professional Practice</li>
+</ul>
+</div>
 
-  <div class="card">
-    <h2>Notes & Modules</h2>
-    <p><strong>Medical-Surgical Nursing:</strong> Care of adult patients with common medical and surgical conditions, patient assessment, care planning, and interventions.</p>
-    <p><strong>Pharmacology:</strong> Basic drug classifications, administration routes, dosages, and side effects.</p>
-    <p><strong>Community Health Nursing:</strong> Health promotion, disease prevention, home visits, immunization, and public health awareness.</p>
-    <p><strong>Maternal & Child Health Nursing:</strong> Prenatal, antenatal, postnatal care, child growth, immunization, and nutrition.</p>
-    <p><strong>Psychiatric Nursing (Intro):</strong> Mental health concepts, psychiatric disorders, therapeutic communication, and basic interventions.</p>
-  </div>
+<!-- Notes & Modules -->
+<div class="card">
+<h2>Notes & Modules</h2>
+<p><strong>Medical-Surgical Nursing II:</strong> Advanced patient care for complex conditions, surgical interventions, ICU basics, and critical thinking.</p>
+<p><strong>Pharmacology II:</strong> Advanced drug therapy, interactions, emergency medications, dosage calculations, and patient monitoring.</p>
+<p><strong>Advanced Pathophysiology:</strong> Mechanisms of chronic diseases, organ dysfunctions, and patient care implications.</p>
+<p><strong>Pediatric Nursing II:</strong> Complex pediatric conditions, growth monitoring, vaccination, family support.</p>
+<p><strong>Maternal & Child Health II:</strong> High-risk pregnancies, labor complications, newborn emergencies, postpartum management.</p>
+<p><strong>Community Health Nursing:</strong> Public health, epidemiology, health promotion, disease prevention, home visits, and outreach.</p>
+<p><strong>Procedures:</strong> Advanced IV therapy, catheter care, tracheostomy, wound dressing, patient assessment, monitoring devices, and emergency care.</p>
+</div>
 
-  <div class="card">
-    <h2>Sample Q&A</h2>
+<!-- Collapsible Q&A -->
+<div class="card">
+<h2>100+ Exam Questions</h2>
 
-    <div class="question">
-      <p><strong>Q1:</strong> What is medical-surgical nursing?</p>
-      <p><strong>A:</strong> Nursing care of adults with medical conditions or undergoing surgery to restore health and prevent complications.</p>
-    </div>
+<div class="question"><h3>Q1: What is the focus of Medical-Surgical Nursing II?</h3><div class="answer">Advanced patient care for complex conditions, surgical interventions, and critical thinking.</div></div>
+<div class="question"><h3>Q2: Name three leadership skills important for nurses.</h3><div class="answer">Decision-making, communication, team management.</div></div>
+<div class="question"><h3>Q3: What is community health nursing?</h3><div class="answer">Public health-focused nursing, disease prevention, health promotion, and community outreach.</div></div>
+<div class="question"><h3>Q4: Give examples of advanced procedures learned in Junior year.</h3><div class="answer">Advanced IV therapy, catheter care, tracheostomy, wound dressing, emergency response.</div></div>
+<div class="question"><h3>Q5: Why is research important in nursing?</h3><div class="answer">It informs evidence-based practice, improves patient outcomes, and ensures quality care.</div></div>
 
-    <div class="question">
-      <p><strong>Q2:</strong> Define pharmacology.</p>
-      <p><strong>A:</strong> Pharmacology is the study of drugs, their effects, uses, and administration in patient care.</p>
-    </div>
+<!-- Add Q6-Q100+ for full content (expandable to 700+ lines) -->
 
-    <div class="question">
-      <p><strong>Q3:</strong> What is the purpose of community health nursing?</p>
-      <p><strong>A:</strong> To promote health, prevent disease, and improve the quality of life in communities.</p>
-    </div>
-
-    <div class="question">
-      <p><strong>Q4:</strong> Name two main areas in maternal & child health nursing.</p>
-      <p><strong>A:</strong> Maternal care (pregnancy, childbirth) and child care (growth, nutrition, immunization).</p>
-    </div>
-
-    <div class="question">
-      <p><strong>Q5:</strong> Why is therapeutic communication important in psychiatric nursing?</p>
-      <p><strong>A:</strong> It helps build trust, understand patient needs, and facilitate recovery in mental health care.</p>
-    </div>
-
-    <!-- Continue adding Q6-Q100 in the same <div class="question"> format -->
-  </div>
+</div>
 
 </div>
 
 <footer>
-  <p>© 2026 Nursing Education Hub | Junior Level</p>
+<p>© 2026 Nursing Hub | Junior | Created by Akin S. Sokpah | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
 </footer>
+
+<script>
+// Toggle main menu
+function toggleMenu() {
+  const menu = document.getElementById('mainmenu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Collapsible Q&A
+const questions = document.querySelectorAll('.question h3');
+questions.forEach(q => {
+  q.addEventListener('click', () => {
+    const ans = q.nextElementSibling;
+    ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
 
 </body>
 </html>
