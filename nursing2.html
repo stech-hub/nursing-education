@@ -2,107 +2,119 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nursing II - Freshman II</title>
+<title>Freshman II - Nursing Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <style>
-body { font-family: Arial, sans-serif; background:#fffde7; margin:0; padding:0; }
+body { margin:0; font-family: Arial,sans-serif; background:#fff8e1; }
 header { background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32); color:#fff; padding:20px; text-align:center; position:relative; }
-header h1 { margin:0; }
+header h1 { margin:0; font-size:1.8em; }
 .mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
-.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100; }
+.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:100; }
 .dropdown-menu a { display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold; }
 .dropdown-menu a:hover { background:#f4c430; color:#fff; }
-nav { background:#ffcc80; padding:10px; text-align:center; }
-nav a { margin:0 10px; color:#0b3c91; text-decoration:none; font-weight:bold; }
-.container { padding:20px; }
 
-/* Cards */
-.card { background:#fff8e1; border-radius:16px; padding:20px; margin-bottom:20px; }
-.card h2 { color:#ff9800; }
+.container { padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
 
-/* Lists */
-ul { padding-left:20px; }
-ul li { margin-bottom:6px; }
+.card { background:#fff3e0; border-radius:16px; padding:20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); cursor:pointer; transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+.card h2 { color:#ff9800; margin-bottom:10px; }
+.card p { color:#0b3c91; font-weight:bold; }
 
-/* Collapsible Q&A */
+.card ul { text-align:left; padding-left:20px; }
+
+.qna-section { grid-column:1/-1; }
 .question { margin-bottom:15px; border:1px solid #ffd700; border-radius:10px; padding:10px; background:#fffde7; }
 .question h3 { cursor:pointer; margin:0; color:#0b3c91; }
 .answer { display:none; padding-top:5px; color:#1f2937; }
+
+/* Search */
+#searchInput { padding:10px; width:100%; margin-bottom:15px; border-radius:10px; border:1px solid #ccc; outline:none; }
+
+/* Footer */
+footer { text-align:center; padding:15px; background:#ffcc80; margin-top:20px; font-weight:bold; }
+
+/* Ns Bot Floating */
+#nsbot-container { position:fixed; bottom:30px; right:30px; z-index:999; }
+#nsbot-btn { background:#ff4081; color:#fff; border:none; padding:15px 20px; border-radius:50px; cursor:pointer; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
+#nsbot-chat { display:none; width:350px; max-height:500px; background:#fff0f5; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; margin-top:10px; }
+#nsbot-chat .header { background:#ff4081; color:#fff; padding:10px; text-align:center; font-weight:bold; }
+#nsbot-messages { padding:10px; height:300px; overflow-y:auto; }
+#nsbot-chat input { flex:1; padding:10px; border:none; outline:none; }
+#nsbot-chat button { background:#ff4081; color:#fff; border:none; padding:0 15px; cursor:pointer; }
+#nsbot-chat .input-container { display:flex; border-top:1px solid #ff4081; }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Nursing II - Freshman II</h1>
+<h1>Freshman II - Nursing Hub</h1>
 <div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
 <div class="dropdown-menu" id="mainmenu">
   <a href="index.html">Dashboard</a>
-  <a href="nursing1.html">Nursing I</a>
-  <a href="nursing2.html">Nursing II</a>
+  <a href="nursing1.html">Freshman I</a>
+  <a href="nursing2.html">Freshman II</a>
   <a href="sophomore.html">Sophomore</a>
   <a href="junior.html">Junior</a>
   <a href="senior.html">Senior</a>
 </div>
 </header>
 
-<nav>
-<a href="index.html">Dashboard</a>
-<a href="nursing1.html">Nursing I</a>
-<a href="nursing2.html">Nursing II</a>
-<a href="sophomore.html">Sophomore</a>
-<a href="junior.html">Junior</a>
-<a href="senior.html">Senior</a>
-</nav>
-
 <div class="container">
 
-<!-- Subjects -->
+<!-- Modules & Notes Card -->
 <div class="card">
-<h2>Subjects</h2>
+<h2>Modules & Notes</h2>
 <ul>
 <li>Fundamentals of Nursing II</li>
 <li>Anatomy & Physiology II</li>
-<li>Microbiology</li>
-<li>Nutrition</li>
-<li>Psychology</li>
-<li>Patient Assessment & Monitoring</li>
-<li>Advanced Hygiene & Safety</li>
-<li>Introduction to Clinical Skills</li>
-<li>Medical-Surgical Basics</li>
-<li>Documentation & Ethical Practices</li>
+<li>Microbiology Basics</li>
+<li>Pharmacology Introduction</li>
+<li>Nutrition & Dietetics</li>
+<li>Advanced Nursing Procedures</li>
+<li>Patient Safety & Risk Management</li>
+<li>Vital Signs Interpretation</li>
+<li>Basic Diagnostic Tests</li>
+<li>Documentation & Nursing Reports</li>
 </ul>
 </div>
 
-<!-- Notes & Modules -->
+<!-- Procedures Card -->
 <div class="card">
-<h2>Notes & Modules</h2>
-<p><strong>Fundamentals of Nursing II:</strong> Expanded nursing process, patient-centered care, advanced assessment, infection control, and professional ethics.</p>
-<p><strong>Anatomy & Physiology II:</strong> Cardiovascular, respiratory, digestive, endocrine, urinary, and reproductive systems.</p>
-<p><strong>Microbiology:</strong> Pathogens, bacteria, viruses, fungi, sterilization, disinfection, and infection prevention.</p>
-<p><strong>Nutrition:</strong> Food nutrients, dietary needs, malnutrition, diet planning for patients.</p>
-<p><strong>Psychology:</strong> Human behavior, stress management, patient emotional support, therapeutic communication.</p>
-<p><strong>Procedures:</strong> Vital signs, injections (IM, SC, ID), IV therapy, wound care, patient positioning, hygiene care, feeding, first aid.</p>
+<h2>Step-by-Step Procedures</h2>
+<ul>
+<li>Hand Hygiene Advanced</li>
+<li>Patient Bathing Techniques</li>
+<li>Bed Making & Patient Positioning</li>
+<li>Vital Signs Interpretation</li>
+<li>Oral Care Procedures</li>
+<li>IV Cannulation Basics</li>
+<li>Injection Techniques</li>
+<li>Basic Wound Care</li>
+<li>First Aid for Emergencies</li>
+<li>Infection Control Practices</li>
+</ul>
 </div>
 
-<!-- Collapsible Q&A -->
-<div class="card">
-<h2>100+ Exam Questions</h2>
+<!-- Q&A Section -->
+<div class="card qna-section">
+<h2>Interactive Q&A</h2>
+<input type="text" id="searchInput" placeholder="Search questions...">
 
-<div class="question"><h3>Q1: What is the main focus of Fundamentals of Nursing II?</h3><div class="answer">Advanced patient care, assessment, interventions, and professional ethical practices.</div></div>
-<div class="question"><h3>Q2: Name the major systems studied in Anatomy & Physiology II.</h3><div class="answer">Cardiovascular, respiratory, digestive, endocrine, urinary, and reproductive systems.</div></div>
-<div class="question"><h3>Q3: What is the importance of microbiology in nursing?</h3><div class="answer">It helps nurses understand pathogens, infection prevention, and control measures.</div></div>
-<div class="question"><h3>Q4: List three types of injections used in clinical practice.</h3><div class="answer">Intramuscular (IM), Subcutaneous (SC), and Intradermal (ID) injections.</div></div>
-<div class="question"><h3>Q5: Why is patient nutrition important in nursing?</h3><div class="answer">Proper nutrition supports healing, maintains health, and improves overall patient outcomes.</div></div>
+<div class="question"><h3>Q1: What is aseptic technique?</h3><div class="answer">Aseptic technique is a procedure used to prevent contamination by pathogens.</div></div>
+<div class="question"><h3>Q2: Define pharmacology.</h3><div class="answer">Pharmacology is the study of drugs, their properties, and effects on the body.</div></div>
+<div class="question"><h3>Q3: What are the major components of nutrition?</h3><div class="answer">Carbohydrates, Proteins, Fats, Vitamins, Minerals, Water.</div></div>
+<div class="question"><h3>Q4: List two diagnostic tests commonly used in Freshman II.</h3><div class="answer">Blood tests and urine analysis.</div></div>
+<div class="question"><h3>Q5: Why is patient safety important?</h3><div class="answer">It prevents accidents, reduces errors, and ensures quality care.</div></div>
 
-<!-- Continue adding Q6-Q100+ for full content (expandable to 700+ lines) -->
+<!-- Repeat Q6-Q100+ for full content -->
 
 </div>
 
 </div>
 
 <footer>
-<p>© 2026 Nursing Hub | Nursing II | Created by Akin S. Sokpah | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
+<p>© 2026 Nursing Hub | Freshman II | Created by Akin S. Sokpah | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
 </footer>
 
 <script>
@@ -120,6 +132,55 @@ questions.forEach(q => {
     ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
   });
 });
+
+// Search/filter functionality
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('keyup', () => {
+  const filter = searchInput.value.toLowerCase();
+  questions.forEach(q => {
+    const text = q.innerText.toLowerCase();
+    q.parentElement.style.display = text.includes(filter) ? '' : 'none';
+  });
+});
+
+// Ns Bot AI
+const nsBtn = document.getElementById('nsbot-btn');
+const nsChat = document.getElementById('nsbot-chat');
+nsBtn.addEventListener('click', () => {
+  nsChat.style.display = nsChat.style.display === 'block' ? 'none' : 'block';
+});
+
+// Ns Bot Send
+const nsSend = document.getElementById('nsbot-send');
+const nsInput = document.getElementById('nsbot-input');
+const nsMessages = document.getElementById('nsbot-messages');
+
+nsSend.addEventListener('click', async () => {
+  const question = nsInput.value.trim();
+  if(!question) return;
+  appendMessage("You", question);
+  nsInput.value = '';
+
+  try {
+    const response = await fetch('/api/nsbot', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question})
+    });
+    const data = await response.json();
+    appendMessage("Ns Bot", data.answer);
+  } catch(err) {
+    appendMessage("Ns Bot","Sorry, Ns Bot cannot answer now.");
+  }
+});
+
+function appendMessage(sender,text){
+  const msg = document.createElement('div');
+  msg.style.marginBottom='10px';
+  msg.innerHTML=`<b>${sender}:</b> ${text}`;
+  nsMessages.appendChild(msg);
+  nsMessages.scrollTop = nsMessages.scrollHeight;
+}
 </script>
 
 </body>
