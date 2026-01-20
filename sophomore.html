@@ -2,100 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sophomore Nursing</title>
+<title>Sophomore - Nursing Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <style>
-body { font-family: Arial, sans-serif; background:#fffde7; margin:0; padding:0; }
+body { margin:0; font-family: Arial,sans-serif; background:#fff8e1; }
 header { background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32); color:#fff; padding:20px; text-align:center; position:relative; }
-header h1 { margin:0; }
+header h1 { margin:0; font-size:1.8em; }
 .mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
-.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100; }
+.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:100; }
 .dropdown-menu a { display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold; }
 .dropdown-menu a:hover { background:#f4c430; color:#fff; }
-nav { background:#ffcc80; padding:10px; text-align:center; }
-nav a { margin:0 10px; color:#0b3c91; text-decoration:none; font-weight:bold; }
-.container { padding:20px; }
 
-/* Cards */
-.card { background:#fff8e1; border-radius:16px; padding:20px; margin-bottom:20px; }
-.card h2 { color:#ff9800; }
+.container { padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
 
-/* Lists */
-ul { padding-left:20px; }
-ul li { margin-bottom:6px; }
+.card { background:#fff3e0; border-radius:16px; padding:20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); cursor:pointer; transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+.card h2 { color:#ff9800; margin-bottom:10px; }
+.card p { color:#0b3c91; font-weight:bold; }
 
-/* Collapsible Q&A */
+.card ul { text-align:left; padding-left:20px; }
+
+.qna-section { grid-column:1/-1; }
 .question { margin-bottom:15px; border:1px solid #ffd700; border-radius:10px; padding:10px; background:#fffde7; }
 .question h3 { cursor:pointer; margin:0; color:#0b3c91; }
 .answer { display:none; padding-top:5px; color:#1f2937; }
+
+/* Search */
+#searchInput { padding:10px; width:100%; margin-bottom:15px; border-radius:10px; border:1px solid #ccc; outline:none; }
+
+/* Footer */
+footer { text-align:center; padding:15px; background:#ffcc80; margin-top:20px; font-weight:bold; }
+
+/* Ns Bot Floating */
+#nsbot-container { position:fixed; bottom:30px; right:30px; z-index:999; }
+#nsbot-btn { background:#ff4081; color:#fff; border:none; padding:15px 20px; border-radius:50px; cursor:pointer; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
+#nsbot-chat { display:none; width:350px; max-height:500px; background:#fff0f5; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; margin-top:10px; }
+#nsbot-chat .header { background:#ff4081; color:#fff; padding:10px; text-align:center; font-weight:bold; }
+#nsbot-messages { padding:10px; height:300px; overflow-y:auto; }
+#nsbot-chat input { flex:1; padding:10px; border:none; outline:none; }
+#nsbot-chat button { background:#ff4081; color:#fff; border:none; padding:0 15px; cursor:pointer; }
+#nsbot-chat .input-container { display:flex; border-top:1px solid #ff4081; }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Sophomore Nursing</h1>
+<h1>Sophomore - Nursing Hub</h1>
 <div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
 <div class="dropdown-menu" id="mainmenu">
   <a href="index.html">Dashboard</a>
-  <a href="nursing1.html">Nursing I</a>
-  <a href="nursing2.html">Nursing II</a>
+  <a href="nursing1.html">Freshman I</a>
+  <a href="nursing2.html">Freshman II</a>
   <a href="sophomore.html">Sophomore</a>
   <a href="junior.html">Junior</a>
   <a href="senior.html">Senior</a>
 </div>
 </header>
 
-<nav>
-<a href="index.html">Dashboard</a>
-<a href="nursing1.html">Nursing I</a>
-<a href="nursing2.html">Nursing II</a>
-<a href="sophomore.html">Sophomore</a>
-<a href="junior.html">Junior</a>
-<a href="senior.html">Senior</a>
-</nav>
-
 <div class="container">
 
-<!-- Subjects -->
+<!-- Modules & Notes Card -->
 <div class="card">
-<h2>Subjects</h2>
+<h2>Modules & Notes</h2>
 <ul>
-<li>Medical-Surgical Nursing I</li>
-<li>Pharmacology I</li>
+<li>Advanced Anatomy & Physiology</li>
 <li>Pathophysiology</li>
-<li>Pediatric Nursing I</li>
-<li>Maternal & Child Health I</li>
-<li>Advanced Patient Assessment</li>
-<li>Clinical Practicum I</li>
-<li>Infection Control & Safety</li>
-<li>Patient Education</li>
-<li>Ethics & Professional Practice</li>
+<li>Advanced Pharmacology</li>
+<li>Microbiology & Infection Control</li>
+<li>Nutrition & Metabolism</li>
+<li>Health Assessment Techniques</li>
+<li>Clinical Nursing Skills</li>
+<li>Patient Education & Communication</li>
+<li>Medical-Surgical Nursing Basics</li>
+<li>Documentation & Care Plans</li>
 </ul>
 </div>
 
-<!-- Notes & Modules -->
+<!-- Procedures Card -->
 <div class="card">
-<h2>Notes & Modules</h2>
-<p><strong>Medical-Surgical Nursing I:</strong> Study of common diseases, patient care management, pre/post-operative care, and clinical decision-making.</p>
-<p><strong>Pharmacology I:</strong> Basic pharmacokinetics, drug classifications, administration, dosage calculations, side effects, and patient monitoring.</p>
-<p><strong>Pathophysiology:</strong> Disease mechanisms, etiology, clinical manifestations, and nursing interventions.</p>
-<p><strong>Pediatric Nursing I:</strong> Growth and development, common pediatric illnesses, patient care, family education, and safety.</p>
-<p><strong>Maternal & Child Health I:</strong> Antenatal care, labor and delivery, postpartum care, newborn care, and maternal education.</p>
-<p><strong>Procedures:</strong> IV therapy, injections, vital signs, wound care, catheterization, hygiene care, patient positioning, feeding, first aid.</p>
+<h2>Step-by-Step Procedures</h2>
+<ul>
+<li>IV Therapy & Fluids</li>
+<li>Injection Techniques Advanced</li>
+<li>Vital Signs Interpretation & Monitoring</li>
+<li>Wound Care Procedures</li>
+<li>Catheterization Basics</li>
+<li>Respiratory Assessment</li>
+<li>Patient Education Delivery</li>
+<li>Advanced Bed Making & Positioning</li>
+<li>Infection Prevention & Control</li>
+<li>Documentation of Clinical Care</li>
+</ul>
 </div>
 
-<!-- Collapsible Q&A -->
-<div class="card">
-<h2>100+ Exam Questions</h2>
+<!-- Q&A Section -->
+<div class="card qna-section">
+<h2>Interactive Q&A</h2>
+<input type="text" id="searchInput" placeholder="Search questions...">
 
-<div class="question"><h3>Q1: What is Medical-Surgical Nursing I focused on?</h3><div class="answer">Patient care management of common diseases, pre/post-operative care, and clinical decision-making.</div></div>
-<div class="question"><h3>Q2: Define pharmacokinetics.</h3><div class="answer">The study of how the body absorbs, distributes, metabolizes, and excretes drugs.</div></div>
-<div class="question"><h3>Q3: Name two common pediatric nursing principles.</h3><div class="answer">Growth/development monitoring and family-centered care.</div></div>
-<div class="question"><h3>Q4: List three maternal & child health nursing responsibilities.</h3><div class="answer">Antenatal care, labor & delivery support, postpartum care.</div></div>
-<div class="question"><h3>Q5: Why is infection control important in clinical practice?</h3><div class="answer">Prevents spread of disease, protects patients and staff, and ensures safe care.</div></div>
+<div class="question"><h3>Q1: What is pathophysiology?</h3><div class="answer">Pathophysiology is the study of functional changes in the body caused by disease or injury.</div></div>
+<div class="question"><h3>Q2: Define advanced pharmacology.</h3><div class="answer">It is the study of drug actions, interactions, and effects on various body systems.</div></div>
+<div class="question"><h3>Q3: What is the purpose of health assessment?</h3><div class="answer">To evaluate the patient's physical, emotional, and psychological status.</div></div>
+<div class="question"><h3>Q4: Name two common infection control methods.</h3><div class="answer">Hand hygiene and proper disposal of medical waste.</div></div>
+<div class="question"><h3>Q5: Why are care plans important?</h3><div class="answer">They guide nursing interventions and ensure consistent patient care.</div></div>
 
-<!-- Continue adding Q6-Q100+ for full content (expandable to 700+ lines) -->
+<!-- Repeat Q6-Q100+ for full content -->
 
 </div>
 
@@ -120,6 +132,55 @@ questions.forEach(q => {
     ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
   });
 });
+
+// Search/filter functionality
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('keyup', () => {
+  const filter = searchInput.value.toLowerCase();
+  questions.forEach(q => {
+    const text = q.innerText.toLowerCase();
+    q.parentElement.style.display = text.includes(filter) ? '' : 'none';
+  });
+});
+
+// Ns Bot AI
+const nsBtn = document.getElementById('nsbot-btn');
+const nsChat = document.getElementById('nsbot-chat');
+nsBtn.addEventListener('click', () => {
+  nsChat.style.display = nsChat.style.display === 'block' ? 'none' : 'block';
+});
+
+// Ns Bot Send
+const nsSend = document.getElementById('nsbot-send');
+const nsInput = document.getElementById('nsbot-input');
+const nsMessages = document.getElementById('nsbot-messages');
+
+nsSend.addEventListener('click', async () => {
+  const question = nsInput.value.trim();
+  if(!question) return;
+  appendMessage("You", question);
+  nsInput.value = '';
+
+  try {
+    const response = await fetch('/api/nsbot', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question})
+    });
+    const data = await response.json();
+    appendMessage("Ns Bot", data.answer);
+  } catch(err) {
+    appendMessage("Ns Bot","Sorry, Ns Bot cannot answer now.");
+  }
+});
+
+function appendMessage(sender,text){
+  const msg = document.createElement('div');
+  msg.style.marginBottom='10px';
+  msg.innerHTML=`<b>${sender}:</b> ${text}`;
+  nsMessages.appendChild(msg);
+  nsMessages.scrollTop = nsMessages.scrollHeight;
+}
 </script>
 
 </body>
