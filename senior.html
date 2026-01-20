@@ -2,101 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Senior Nursing</title>
+<title>Senior - Nursing Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <style>
-body { font-family: Arial, sans-serif; background:#fff8e1; margin:0; padding:0; }
+body { margin:0; font-family: Arial,sans-serif; background:#fff8e1; }
 header { background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32); color:#fff; padding:20px; text-align:center; position:relative; }
-header h1 { margin:0; }
+header h1 { margin:0; font-size:1.8em; }
 .mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
-.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100; }
+.dropdown-menu { display:none; position:absolute; right:20px; top:60px; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:100; }
 .dropdown-menu a { display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold; }
 .dropdown-menu a:hover { background:#f4c430; color:#fff; }
-nav { background:#ffcc80; padding:10px; text-align:center; }
-nav a { margin:0 10px; color:#0b3c91; text-decoration:none; font-weight:bold; }
-.container { padding:20px; }
 
-/* Cards */
-.card { background:#fff3e0; border-radius:16px; padding:20px; margin-bottom:20px; }
-.card h2 { color:#ff9800; }
+.container { padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
 
-/* Lists */
-ul { padding-left:20px; }
-ul li { margin-bottom:6px; }
+.card { background:#fff3e0; border-radius:16px; padding:20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); cursor:pointer; transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+.card h2 { color:#ff9800; margin-bottom:10px; }
+.card p { color:#0b3c91; font-weight:bold; }
 
-/* Collapsible Q&A */
+.card ul { text-align:left; padding-left:20px; }
+
+.qna-section { grid-column:1/-1; }
 .question { margin-bottom:15px; border:1px solid #ffd700; border-radius:10px; padding:10px; background:#fffde7; }
 .question h3 { cursor:pointer; margin:0; color:#0b3c91; }
 .answer { display:none; padding-top:5px; color:#1f2937; }
+
+/* Search */
+#searchInput { padding:10px; width:100%; margin-bottom:15px; border-radius:10px; border:1px solid #ccc; outline:none; }
+
+/* Footer */
+footer { text-align:center; padding:15px; background:#ffcc80; margin-top:20px; font-weight:bold; }
+
+/* Ns Bot Floating */
+#nsbot-container { position:fixed; bottom:30px; right:30px; z-index:999; }
+#nsbot-btn { background:#ff4081; color:#fff; border:none; padding:15px 20px; border-radius:50px; cursor:pointer; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
+#nsbot-chat { display:none; width:350px; max-height:500px; background:#fff0f5; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; margin-top:10px; }
+#nsbot-chat .header { background:#ff4081; color:#fff; padding:10px; text-align:center; font-weight:bold; }
+#nsbot-messages { padding:10px; height:300px; overflow-y:auto; }
+#nsbot-chat input { flex:1; padding:10px; border:none; outline:none; }
+#nsbot-chat button { background:#ff4081; color:#fff; border:none; padding:0 15px; cursor:pointer; }
+#nsbot-chat .input-container { display:flex; border-top:1px solid #ff4081; }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Senior Nursing</h1>
+<h1>Senior - Nursing Hub</h1>
 <div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
 <div class="dropdown-menu" id="mainmenu">
   <a href="index.html">Dashboard</a>
-  <a href="nursing1.html">Nursing I</a>
-  <a href="nursing2.html">Nursing II</a>
+  <a href="nursing1.html">Freshman I</a>
+  <a href="nursing2.html">Freshman II</a>
   <a href="sophomore.html">Sophomore</a>
   <a href="junior.html">Junior</a>
   <a href="senior.html">Senior</a>
 </div>
 </header>
 
-<nav>
-<a href="index.html">Dashboard</a>
-<a href="nursing1.html">Nursing I</a>
-<a href="nursing2.html">Nursing II</a>
-<a href="sophomore.html">Sophomore</a>
-<a href="junior.html">Junior</a>
-<a href="senior.html">Senior</a>
-</nav>
-
 <div class="container">
 
-<!-- Subjects -->
+<!-- Modules & Notes Card -->
 <div class="card">
-<h2>Subjects</h2>
+<h2>Modules & Notes</h2>
 <ul>
-<li>Advanced Medical-Surgical Nursing</li>
-<li>Pharmacology III</li>
-<li>Critical Care & ICU Nursing</li>
-<li>Pediatric Nursing III</li>
-<li>Maternal & Child Health III</li>
-<li>Community & Public Health Nursing II</li>
-<li>Leadership, Management & Administration</li>
-<li>Research & Evidence-Based Practice II</li>
-<li>Professional Ethics & Policy</li>
-<li>Capstone Project & Clinical Practicum III</li>
+<li>Advanced Clinical Practice</li>
+<li>Capstone Nursing Projects</li>
+<li>Leadership & Policy in Nursing</li>
+<li>Advanced Critical Care Nursing</li>
+<li>Specialty Nursing Topics</li>
+<li>Research & Evidence-Based Practice</li>
+<li>Patient Safety & Risk Management</li>
+<li>Healthcare Quality Improvement</li>
+<li>Professional Ethics & Law</li>
+<li>Advanced Documentation & Reporting</li>
 </ul>
 </div>
 
-<!-- Notes & Modules -->
+<!-- Procedures Card -->
 <div class="card">
-<h2>Notes & Modules</h2>
-<p><strong>Advanced Medical-Surgical Nursing:</strong> Management of complex illnesses, surgical care, ICU monitoring, emergency interventions, and end-of-life care.</p>
-<p><strong>Pharmacology III:</strong> Advanced drug therapy, critical medications, high-risk patients, and complex dosage calculations.</p>
-<p><strong>Critical Care & ICU Nursing:</strong> Advanced monitoring, ventilator care, emergency procedures, shock management, and life support basics.</p>
-<p><strong>Pediatric Nursing III:</strong> Complex pediatric care, chronic conditions, advanced growth monitoring, and emergency pediatric interventions.</p>
-<p><strong>Maternal & Child Health III:</strong> High-risk pregnancies, labor & delivery complications, postpartum care, neonatal emergencies.</p>
-<p><strong>Community & Public Health Nursing II:</strong> Epidemiology, health promotion programs, community outreach, disaster management.</p>
-<p><strong>Procedures:</strong> ICU care, advanced IV therapy, tracheostomy, ventilator monitoring, cardiac care, emergency protocols, patient education.</p>
+<h2>Step-by-Step Procedures</h2>
+<ul>
+<li>Critical Care Interventions</li>
+<li>Advanced IV & Medication Administration</li>
+<li>Emergency & Trauma Care</li>
+<li>Advanced Wound Management</li>
+<li>Patient Education & Counseling Strategies</li>
+<li>Leadership in Clinical Settings</li>
+<li>Advanced Patient Assessment</li>
+<li>Infection Control Protocols</li>
+<li>Healthcare Quality Improvement Practices</li>
+<li>Research Application in Clinical Settings</li>
+</ul>
 </div>
 
-<!-- Collapsible Q&A -->
-<div class="card">
-<h2>100+ Exam Questions</h2>
+<!-- Q&A Section -->
+<div class="card qna-section">
+<h2>Interactive Q&A</h2>
+<input type="text" id="searchInput" placeholder="Search questions...">
 
-<div class="question"><h3>Q1: What is the focus of Advanced Medical-Surgical Nursing?</h3><div class="answer">Care of patients with complex medical and surgical conditions, including ICU monitoring and emergencies.</div></div>
-<div class="question"><h3>Q2: Name two critical care interventions for ICU patients.</h3><div class="answer">Ventilator management and advanced hemodynamic monitoring.</div></div>
-<div class="question"><h3>Q3: Why is leadership important in senior nursing?</h3><div class="answer">Ensures efficient team coordination, quality patient care, and policy adherence.</div></div>
-<div class="question"><h3>Q4: What are key components of community health programs?</h3><div class="answer">Health promotion, disease prevention, epidemiology, and public education.</div></div>
-<div class="question"><h3>Q5: Why is research essential at senior level?</h3><div class="answer">Supports evidence-based practice, improves outcomes, and guides policy decisions.</div></div>
+<div class="question"><h3>Q1: What is a capstone project in nursing?</h3><div class="answer">A capstone project integrates learned knowledge and skills into a comprehensive clinical or research project demonstrating competence.</div></div>
+<div class="question"><h3>Q2: Define advanced critical care nursing.</h3><div class="answer">Advanced critical care nursing involves specialized care for critically ill patients with complex conditions.</div></div>
+<div class="question"><h3>Q3: Why is healthcare quality improvement important?</h3><div class="answer">It ensures patient safety, improves outcomes, and increases overall healthcare efficiency.</div></div>
+<div class="question"><h3>Q4: Name two leadership responsibilities in nursing.</h3><div class="answer">Team coordination and policy implementation in clinical settings.</div></div>
+<div class="question"><h3>Q5: What is the role of research in nursing practice?</h3><div class="answer">Research guides evidence-based interventions, improves patient care, and advances nursing knowledge.</div></div>
 
-<!-- Continue adding Q6-Q100+ for full content (expandable to 700+ lines) -->
+<!-- Repeat Q6-Q100+ for full content -->
 
 </div>
 
@@ -121,6 +132,55 @@ questions.forEach(q => {
     ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
   });
 });
+
+// Search/filter functionality
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('keyup', () => {
+  const filter = searchInput.value.toLowerCase();
+  questions.forEach(q => {
+    const text = q.innerText.toLowerCase();
+    q.parentElement.style.display = text.includes(filter) ? '' : 'none';
+  });
+});
+
+// Ns Bot AI
+const nsBtn = document.getElementById('nsbot-btn');
+const nsChat = document.getElementById('nsbot-chat');
+nsBtn.addEventListener('click', () => {
+  nsChat.style.display = nsChat.style.display === 'block' ? 'none' : 'block';
+});
+
+// Ns Bot Send
+const nsSend = document.getElementById('nsbot-send');
+const nsInput = document.getElementById('nsbot-input');
+const nsMessages = document.getElementById('nsbot-messages');
+
+nsSend.addEventListener('click', async () => {
+  const question = nsInput.value.trim();
+  if(!question) return;
+  appendMessage("You", question);
+  nsInput.value = '';
+
+  try {
+    const response = await fetch('/api/nsbot', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question})
+    });
+    const data = await response.json();
+    appendMessage("Ns Bot", data.answer);
+  } catch(err) {
+    appendMessage("Ns Bot","Sorry, Ns Bot cannot answer now.");
+  }
+});
+
+function appendMessage(sender,text){
+  const msg = document.createElement('div');
+  msg.style.marginBottom='10px';
+  msg.innerHTML=`<b>${sender}:</b> ${text}`;
+  nsMessages.appendChild(msg);
+  nsMessages.scrollTop = nsMessages.scrollHeight;
+}
 </script>
 
 </body>
