@@ -1,4 +1,4 @@
-// Ns Bot frontend script with quiz, voice, progress
+// Ns Bot frontend script with level selection & quizzes
 const nsBtn = document.getElementById('nsbot-btn');
 const nsChat = document.getElementById('nsbot-chat');
 const nsSend = document.getElementById('nsbot-send');
@@ -10,25 +10,25 @@ let quizActive = false;
 let currentQuiz = [];
 let questionIndex = 0;
 let score = 0;
+let currentLevel = "Freshman I";
 
 // Toggle chat
 nsBtn.addEventListener('click', () => {
   nsChat.style.display = nsChat.style.display === 'block' ? 'none' : 'block';
 });
 
-// Append message
+// Append message with voice
 function appendMessage(sender,text){
   const msg = document.createElement('div');
   msg.style.marginBottom='10px';
   msg.innerHTML=`<b>${sender}:</b> ${text}`;
   nsMessages.appendChild(msg);
   nsMessages.scrollTop = nsMessages.scrollHeight;
-  // Voice output
   const utter = new SpeechSynthesisUtterance(text);
   speechSynthesis.speak(utter);
 }
 
-// Show options as buttons
+// Show clickable options
 function showOptions(options){
   const container = document.createElement('div');
   options.forEach(opt => {
@@ -48,25 +48,52 @@ function showOptions(options){
   nsMessages.scrollTop = nsMessages.scrollHeight;
 }
 
-// Send message / handle quiz
+// Show next quiz question
+function showNextQuestion(){
+  const q = currentQuiz[questionIndex];
+  if(!q) return;
+  let text = `Question ${questionIndex+1}/${currentQuiz.length}:\n${q.question}`;
+  if(q.type==="mc") text+="\nOptions:\n"+q.options.join("\n");
+  if(q.type==="truefalse") text+="\nType: True or False";
+  appendMessage("Ns Bot",text);
+  if(q.type==="mc"||q.type==="truefalse") showOptions(q.options);
+}
+
+// Send message
 async function sendMessage(){
   const question = nsInput.value.trim();
   if(!question) return;
   appendMessage("You",question);
   nsInput.value = '';
 
-  // Handle quiz commands
-  if(question.toLowerCase().includes("start quiz")){
-    appendMessage("Ns Bot","Generating quiz, please wait...");
+  const lower = question.toLowerCase();
+
+  // Creator query
+  if(lower.includes("who created you") || lower.includes("who made you")){
+    appendMessage("Ns Bot","Ns Bot was created by Akin S. Sokpah from Liberia and powered by OpenAI.");
+    return;
+  }
+
+  // Level selection
+  if(lower.startsWith("set level ")){
+    const lvl = question.slice(10).trim();
+    currentLevel = lvl;
+    appendMessage("Ns Bot",`Level set to ${lvl}. You can now start quiz.`);
+    return;
+  }
+
+  // Start quiz
+  if(lower.includes("start quiz")){
+    appendMessage("Ns Bot","Generating quiz for "+currentLevel+"...");
     try {
       const res = await fetch('/api/nsbot',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({question, userId, level:"Freshman"})
+        body: JSON.stringify({question, userId, level: currentLevel})
       });
       const data = await res.json();
-      if(!data.answer || !data.answer.length) return appendMessage("Ns Bot","Error generating quiz.");
-      currentQuiz = data.quiz || [];
+      if(!data.quiz || !data.quiz.length) return appendMessage("Ns Bot","Error generating quiz.");
+      currentQuiz = data.quiz;
       quizActive = true;
       questionIndex = 0;
       score = 0;
@@ -75,7 +102,7 @@ async function sendMessage(){
     return;
   }
 
-  // Quiz active
+  // Quiz in progress
   if(quizActive){
     const currentQ = currentQuiz[questionIndex];
     let feedback="";
@@ -102,13 +129,7 @@ async function sendMessage(){
     }
   }
 
-  // Default / creator query
-  if(question.toLowerCase().includes("who created you")||question.toLowerCase().includes("who made you")){
-    appendMessage("Ns Bot","Ns Bot was created by Akin S. Sokpah from Liberia and powered by OpenAI.");
-    return;
-  }
-
-  // General question AI
+  // Default AI response
   try {
     const res = await fetch('/api/nsbot',{
       method:'POST',
@@ -120,17 +141,5 @@ async function sendMessage(){
   } catch(err){ appendMessage("Ns Bot","Sorry, Ns Bot cannot answer now."); }
 }
 
-// Show next question in quiz
-function showNextQuestion(){
-  const q = currentQuiz[questionIndex];
-  if(!q) return;
-  let text = `Question ${questionIndex+1}/${currentQuiz.length}:\n${q.question}`;
-  if(q.type==="mc") text+="\nOptions:\n"+q.options.join("\n");
-  if(q.type==="truefalse") text+="\nType: True or False";
-  appendMessage("Ns Bot",text);
-  if(q.type==="mc"||q.type==="truefalse") showOptions(q.options);
-}
-
-// Send button
 nsSend.addEventListener('click',sendMessage);
 nsInput.addEventListener('keyup', e=>{ if(e.key==="Enter") sendMessage(); });
