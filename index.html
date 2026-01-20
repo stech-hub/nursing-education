@@ -6,126 +6,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* Reset & body */
 body { margin:0; font-family: Arial, sans-serif; background:#fff8e1; }
 
-/* Header */
 header {
   background: linear-gradient(135deg,#f4c430,#0b3c91,#2e7d32);
-  color:#fff;
-  padding:20px;
-  text-align:center;
-  position:relative;
+  color:#fff; padding:20px; text-align:center; position:relative;
 }
 header h1 { margin:0; font-size:1.8em; }
 
-/* Main Menu Icon */
-.mainmenu-icon {
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-size:30px;
-  cursor:pointer;
-  color:#fff;
-}
+.mainmenu-icon { position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
 
-/* Dropdown menu */
 .dropdown-menu {
-  display:none;
-  position:absolute;
-  right:20px;
-  top:60px;
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.3);
-  overflow:hidden;
-  z-index:100;
+  display:none; position:absolute; right:20px; top:60px;
+  background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; z-index:100;
 }
 .dropdown-menu a {
-  display:block;
-  padding:12px 20px;
-  text-decoration:none;
-  color:#0b3c91;
-  font-weight:bold;
+  display:block; padding:12px 20px; text-decoration:none; color:#0b3c91; font-weight:bold;
 }
 .dropdown-menu a:hover { background:#f4c430; color:#fff; }
 
-/* Navigation cards container */
 .container { padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
 
-/* Cards */
 .card {
-  background:#fff3e0;
-  border-radius:16px;
-  padding:20px;
-  text-align:center;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
-  cursor:pointer;
-  transition:0.3s;
+  background:#fff3e0; border-radius:16px; padding:20px; text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2); cursor:pointer; transition:0.3s;
 }
-.card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
 .card h2 { color:#ff9800; margin-bottom:10px; }
 .card p { color:#0b3c91; font-weight:bold; }
 
-/* Recommended Features Panel */
-.recommended {
-  background:#ffeb3b;
-  grid-column:1/-1;
-}
+.recommended { background:#ffeb3b; grid-column:1/-1; }
 .recommended ul { text-align:left; padding-left:20px; }
 
-/* Courses & Levels Panel */
-.courses {
-  background:#90caf9;
-  grid-column:1/-1;
-}
+.courses { background:#90caf9; grid-column:1/-1; }
 .courses ul { text-align:left; padding-left:20px; }
 .courses ul li a { text-decoration:none; color:#0b3c91; font-weight:bold; }
 .courses ul li a:hover { text-decoration:underline; }
 
-/* Footer */
-footer {
-  text-align:center;
-  padding:15px;
-  background:#ffcc80;
-  margin-top:20px;
-  font-weight:bold;
-}
+footer { text-align:center; padding:15px; background:#ffcc80; margin-top:20px; font-weight:bold; }
 
 /* Ns Bot Floating */
-#nsbot-container {
-  position:fixed; bottom:30px; right:30px; z-index:999;
-}
-#nsbot-btn {
-  background:#ff4081;
-  color:#fff;
-  border:none;
-  padding:15px 20px;
-  border-radius:50px;
-  cursor:pointer;
-  font-weight:bold;
-  box-shadow:0 4px 12px rgba(0,0,0,0.3);
-}
-#nsbot-chat {
-  display:none;
-  width:350px;
-  max-height:500px;
-  background:#fff0f5;
-  border-radius:16px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.3);
-  overflow:hidden;
-  margin-top:10px;
-}
+#nsbot-container { position:fixed; bottom:30px; right:30px; z-index:999; }
+#nsbot-btn { background:#ff4081; color:#fff; border:none; padding:15px 20px; border-radius:50px; cursor:pointer; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
+#nsbot-chat { display:none; width:350px; max-height:500px; background:#fff0f5; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.3); overflow:hidden; margin-top:10px; }
 #nsbot-chat div.header { background:#ff4081; color:#fff; padding:10px; text-align:center; font-weight:bold; }
 #nsbot-messages { padding:10px; height:300px; overflow-y:auto; }
 #nsbot-chat input { flex:1; padding:10px; border:none; outline:none; }
 #nsbot-chat button { background:#ff4081; color:#fff; border:none; padding:0 15px; cursor:pointer; }
-
-/* Flex for chat input */
 #nsbot-chat div.input-container { display:flex; border-top:1px solid #ff4081; }
+
 </style>
 </head>
 <body>
@@ -135,17 +64,15 @@ footer {
 <div class="mainmenu-icon" onclick="toggleMenu()">☰</div>
 <div class="dropdown-menu" id="mainmenu">
   <a href="index.html">Dashboard</a>
-  <a href="nursing1.html">Freshman I</a>
-  <a href="nursing2.html">Freshman II</a>
-  <a href="sophomore.html">Sophomore</a>
-  <a href="junior.html">Junior</a>
-  <a href="senior.html">Senior</a>
+  <a href="#">Freshman I</a>
+  <a href="#">Freshman II</a>
+  <a href="#">Sophomore</a>
+  <a href="#">Junior</a>
+  <a href="#">Senior</a>
 </div>
 </header>
 
 <div class="container">
-
-<!-- Recommended Features -->
 <div class="card recommended">
 <h2>Recommended Features</h2>
 <ul>
@@ -162,56 +89,29 @@ footer {
 </ul>
 </div>
 
-<!-- Courses & Levels -->
 <div class="card courses">
 <h2>Courses & Levels</h2>
 <ul>
-<li><a href="nursing1.html">Nursing I - Freshman I</a></li>
-<li><a href="nursing2.html">Nursing II - Freshman II</a></li>
-<li><a href="sophomore.html">Sophomore</a></li>
-<li><a href="junior.html">Junior</a></li>
-<li><a href="senior.html">Senior</a></li>
-</ul>
-
-<h3>Specialized Subjects</h3>
-<ul>
-<li>Anatomy & Physiology</li>
-<li>Pharmacology</li>
-<li>Medical-Surgical Nursing</li>
-<li>Maternal & Child Health</li>
-<li>Psychiatric Nursing</li>
+<li><a href="#">Nursing I - Freshman I</a></li>
+<li><a href="#">Nursing II - Freshman II</a></li>
+<li><a href="#">Sophomore</a></li>
+<li><a href="#">Junior</a></li>
+<li><a href="#">Senior</a></li>
 </ul>
 </div>
 
-<!-- Example Course Cards -->
-<div class="card" onclick="location.href='nursing1.html'"><h2>Freshman I</h2><p>All Modules, Notes, Q&A</p></div>
-<div class="card" onclick="location.href='nursing2.html'"><h2>Freshman II</h2><p>All Modules, Notes, Q&A</p></div>
-<div class="card" onclick="location.href='sophomore.html'"><h2>Sophomore</h2><p>Advanced Nursing Topics</p></div>
-<div class="card" onclick="location.href='junior.html'"><h2>Junior</h2><p>Clinical Skills & Leadership</p></div>
-<div class="card" onclick="location.href='senior.html'"><h2>Senior</h2><p>Advanced & Capstone Projects</p></div>
-
+<div class="card" onclick="alert('Freshman I modules coming soon')"><h2>Freshman I</h2><p>All Modules, Notes, Q&A</p></div>
+<div class="card" onclick="alert('Freshman II modules coming soon')"><h2>Freshman II</h2><p>All Modules, Notes, Q&A</p></div>
+<div class="card" onclick="alert('Sophomore modules coming soon')"><h2>Sophomore</h2><p>Advanced Nursing Topics</p></div>
+<div class="card" onclick="alert('Junior modules coming soon')"><h2>Junior</h2><p>Clinical Skills & Leadership</p></div>
+<div class="card" onclick="alert('Senior modules coming soon')"><h2>Senior</h2><p>Advanced & Capstone Projects</p></div>
 </div>
 
 <footer>
 <p>© 2026 Nursing Hub | Created by Akin S. Sokpah | <a href="https://www.facebook.com/profile.php?id=61583456361691" target="_blank">Facebook</a> | <a href="https://wa.me/231777789356" target="_blank">WhatsApp</a></p>
 </footer>
 
-<script>
-// Toggle Main Menu
-function toggleMenu() {
-  const menu = document.getElementById('mainmenu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-
-// Ns Bot AI
-const nsBtn = document.getElementById('nsbot-btn');
-const nsChat = document.getElementById('nsbot-chat');
-nsBtn.addEventListener('click', () => {
-  nsChat.style.display = nsChat.style.display === 'block' ? 'none' : 'block';
-});
-</script>
-
-<!-- Ns Bot AI Floating Chat -->
+<!-- Ns Bot Floating -->
 <div id="nsbot-container">
   <button id="nsbot-btn">Ns Bot 💬</button>
   <div id="nsbot-chat">
@@ -224,37 +124,12 @@ nsBtn.addEventListener('click', () => {
   </div>
 </div>
 
+<script src="js/nsbot.js"></script>
 <script>
-// Ns Bot Send Functionality
-const nsSend = document.getElementById('nsbot-send');
-const nsInput = document.getElementById('nsbot-input');
-const nsMessages = document.getElementById('nsbot-messages');
-
-nsSend.addEventListener('click', async () => {
-  const question = nsInput.value.trim();
-  if(!question) return;
-  appendMessage("You", question);
-  nsInput.value = '';
-
-  try {
-    const response = await fetch('/api/nsbot', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({question})
-    });
-    const data = await response.json();
-    appendMessage("Ns Bot", data.answer);
-  } catch (err) {
-    appendMessage("Ns Bot", "Sorry, Ns Bot cannot answer right now.");
-  }
-});
-
-function appendMessage(sender, text){
-  const msg = document.createElement('div');
-  msg.style.marginBottom = '10px';
-  msg.innerHTML = `<b>${sender}:</b> ${text}`;
-  nsMessages.appendChild(msg);
-  nsMessages.scrollTop = nsMessages.scrollHeight;
+// Toggle Main Menu
+function toggleMenu() {
+  const menu = document.getElementById('mainmenu');
+  menu.style.display = menu.style.display==='block' ? 'none' : 'block';
 }
 </script>
 
